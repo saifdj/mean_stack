@@ -2,6 +2,7 @@ var express = require('express');
 console.log("express is created as "+ express);
 var expressInstance = express()
 expressInstance.listen(8000, function(err) {
+    //you can kill all node established servers by typing "killall -9 node" in terminal
     console.log("the server is listening at 8000");
 });
 
