@@ -13,6 +13,10 @@ expressInstance.use(express.static("public/bootstrap_templates/nice_to_meet_you"
 //now we added one more static dir, when request comes in express look in nice_to_meet_you, if not found then look into views 
 expressInstance.use(express.static("src/views"));
 
+expressInstance.use(express.static("bower_components"));
+
+
+
 expressInstance.get("/", function(req, response) {
   
     //you can make a hit to the server which we exstablished at port 8000, opening http://127.0.0.1:8000/ in browser, this call back will be executed and response.send string will be visible in browser

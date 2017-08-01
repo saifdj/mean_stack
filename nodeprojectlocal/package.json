@@ -3,9 +3,6 @@
   "version": "1.0.0",
   "description": "npm description i added after npm init comman in terminal with current folder being root of workspace",
   "main": "index.js",
-  "dependencies": {
-    "express" : "^4.15.3"
-  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node app.js"
@@ -22,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/saifdj/mean_stack/issues"
   },
-  "homepage": "https://github.com/saifdj/mean_stack#readme"
+  "homepage": "https://github.com/saifdj/mean_stack#readme",
+  "dependencies": {
+    "express": "^4.15.3"
+  }
 }
