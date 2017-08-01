@@ -13,7 +13,7 @@ expressInstance.use(express.static("public/bootstrap_templates/nice_to_meet_you"
 //now we added one more static dir, when request comes in express look in nice_to_meet_you, if not found then look into views 
 expressInstance.use(express.static("src/views"));
 
-expressInstance.use(express.static("bower_components"));
+expressInstance.use(express.static("bower_components")); //now remove references to core bootstrap & jquery in index.html ( vendor/bootstrap/js/bootstrap.min.js should be removed and pointed to bower_components/bootstrap/XXXXXXX appropriate path, already done in index.html, search for core and see the changes) 
 
 
 
