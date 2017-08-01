@@ -1,0 +1,20 @@
+{
+  "name": "workspace",
+  "description": "npm description i added after npm init comman in terminal with current folder being root of workspace",
+  "main": "index.js",
+  "authors": [
+    "saif"
+  ],
+  "license": "ISC",
+  "keywords": [
+    "mean"
+  ],
+  "homepage": "https://github.com/saifdj/mean_stack",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
