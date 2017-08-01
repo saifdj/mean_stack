@@ -10,6 +10,8 @@ expressInstance.listen(8000, function(err) {
 
 //this is to set the static directory, request check for files in static directory first, if not found then looks at other path specified in expressInstance.get
 expressInstance.use(express.static("public/bootstrap_templates/nice_to_meet_you"));
+//now we added one more static dir, when request comes in express look in nice_to_meet_you, if not found then look into views 
+expressInstance.use(express.static("src/views"));
 
 expressInstance.get("/", function(req, response) {
   
