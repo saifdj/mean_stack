@@ -22,5 +22,11 @@
   "homepage": "https://github.com/saifdj/mean_stack#readme",
   "dependencies": {
     "express": "^4.15.3"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-jshint": "^2.0.4",
+    "jshint": "^2.9.5",
+    "wiredep": "^4.0.0"
   }
 }
