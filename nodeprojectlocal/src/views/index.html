@@ -9,17 +9,20 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Agency - Start Bootstrap Theme</title>
+    <title>Saif Agency - Bootstrap Theme</title>
 
     <!-- bower:js -->
-    <script src="../../bower_components/jquery/dist/jquery.js"></script>
-    <script src="../../bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="/jquery/dist/jquery.js"></script>
+    <script src="/bootstrap/dist/js/bootstrap.js"></script>
     <!-- endbower -->
 
     <!-- Bootstrap Core CSS    vendor/bootstrap/css/bootstrap.min.css -->
     <!-- <link href="bootstrap/dist/css/bootstrap.min.css" rel="stylesheet"> -->
 
-
+    <!-- //overriding main of bower_components/bower.json as it does not contain css we are adding it here, which results in dynamic linking of css files in index.html, check bower:css comment. Our main nodeprojectlocal/bower.json has depedency bootstrap.js which downloads bower_components/bootstrap, which in trun contain its own bower.json. This override is fix for linking css files -->
+    <!-- bower:css -->
+    <link rel="stylesheet" href="/bootstrap/dist/css/bootstrap.min.css" />
+    <!-- endbower -->
 
     <!-- Custom Fonts -->
     <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -39,9 +42,6 @@
     <![endif]-->
 
 
-    <!-- bower:css -->
-    
-    <!-- endbower -->
 
 </head>
 
