@@ -1,5 +1,7 @@
 var gulp = require("gulp"); //Task manager
-var jshint = require("gulp-jshint") //internally used by gulp for intelligence, style check, semicolans ..
+var jshint = require("gulp-jshint"); //internally used by gulp for intelligence, style check, semicolans ..
+var nodemon = require("gulp-nodemon"); //saves modified files, does/executes injection
+
 
 var jsFiles = ['*.js', 'src/**/*.js']; //all files in src folder and project root folder
 
@@ -30,4 +32,18 @@ gulp.task("inject", function() {
           .pipe(wiredep(options))
           .pipe(inject(injectSrc, injectOptions))
           .pipe(gulp.dest("./src/views"));
+});
+
+gulp.task('serve', ['style','inject'], function() { //runs the tasks present in second param, when the task "serve" is run from terminal
+
+        var options = {
+            script: 'app.js', //this script to run when server starts
+            delayTime: 1, //seconds
+            watch: jsFiles //nodemon watches these files for changes, if files are modifeid server is restarted
+        } 
+
+        return nodemon(options).on("restart", function(ev) { //on server restart this func executes
+           
+            console.log("Restarting server... ")
+        })
 });

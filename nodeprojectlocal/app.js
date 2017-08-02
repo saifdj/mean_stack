@@ -1,5 +1,6 @@
 var express = require('express');
-console.log("express is created as "+ express);
+
+// console.log("express is created as "+ express);
 var expressInstance = express()
 
 expressInstance.listen(8000, function(err) {
