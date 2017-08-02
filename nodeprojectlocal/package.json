@@ -25,6 +25,7 @@
   },
   "devDependencies": {
     "gulp": "^3.9.1",
+    "gulp-inject": "^4.2.0",
     "gulp-jshint": "^2.0.4",
     "jshint": "^2.9.5",
     "wiredep": "^4.0.0"

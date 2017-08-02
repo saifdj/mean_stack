@@ -13,11 +13,11 @@ gulp.task("inject", function() {
 
     var wiredep = require("wiredep").stream; //used to inject jquery and bootstrap in html file dynamically check bower:css & bower:js comments in html
 
-    //var inject = require("gulp-inject"); //used to inject js & css files in public folder into html file, check inject:css & inject:js comments in html
+    var inject = require("gulp-inject"); //used to inject our custom js & css files in public folder into html file, check inject:css & inject:js comments in html
 
     var injectSrc = gulp.src(["./public/bootstrap_templates/nice_to_meet_you/css/*.css", "./public/bootstrap_templates/nice_to_meet_you/js/*.js"]) //from here custom css & js files are taken
     var injectOptions = {
-        ignorePath: "/public"
+        ignorePath: "/public" //this public path variable is not shown in .html file at custom css linking
     }
 
 
@@ -28,7 +28,6 @@ gulp.task("inject", function() {
     }
     return gulp.src("./src/views/*.html")
           .pipe(wiredep(options))
+          .pipe(inject(injectSrc, injectOptions))
           .pipe(gulp.dest("./src/views"));
-
-          //    .pipe(inject(injectSrc, injectOptions))
 });
