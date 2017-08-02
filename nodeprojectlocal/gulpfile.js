@@ -11,7 +11,7 @@ gulp.task("style", function() { //we can execute this call back by running "gulp
 
 gulp.task("inject", function() {
 
-    var wiredep = require("wiredep").stream;
+    var wiredep = require("wiredep").stream; //used to inject jquery and bootstrap in html file dynamically check bower:css & bower:js comments in html
     var options = {
         bowerJson: require("./bower.json"),
         directory: "./bower_components" //dependencies
