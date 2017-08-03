@@ -19,16 +19,15 @@ gulp.task("inject", function() {
 
     var injectSrc = gulp.src(["./public/bootstrap_templates/nice_to_meet_you/css/*.css", "./public/bootstrap_templates/nice_to_meet_you/js/*.js"]) //from here custom css & js files are taken
     var injectOptions = {
-        ignorePath: "/public" //this public path variable is not shown in .html file at custom css linking
-    }
+        
+    }// ignorePath: "/public" //this public path variable is not shown in .html file at custom css linking
 
 
     var options = {
-        bowerJson: require("./bower.json"),
-        directory: "./bower_components", //dependencies adding, from here bootstrap core js and jquery files are taken by wiredep
-        ignorePath: "../../bower_components" //this is used to ignore the given prefix for dynamically injected files in html
-    }
-    return gulp.src("./src/views/*.html")
+        bowerJson: require("./bower.json"), //tell wiredep to look depdencencies in bower.json, our dependency is "bootstrap v^3.3.7"
+        directory: "./bower_components" //path for dependencies, from here bootstrap core js and jquery files are taken by wiredep
+    } //ignorePath: "../../bower_components" //this is used to ignore the given prefix for dynamically injected files in html
+    return gulp.src("./src/views/*.ejs") //path for files which on which injection has to happen(code is added dynamically to these files) 
           .pipe(wiredep(options))
           .pipe(inject(injectSrc, injectOptions))
           .pipe(gulp.dest("./src/views"));
@@ -42,7 +41,8 @@ gulp.task('serve', ['style','inject'], function() { //runs the tasks present in 
             watch: jsFiles //nodemon watches these files for changes, if files are modifeid server is restarted
         } 
 
-        return nodemon(options).on("restart", function(ev) { //on server restart this func executes
+        return nodemon(options)
+               .on("restart", function(ev) { //on server restart this func executes
            
             console.log("Restarting server... ")
         })
