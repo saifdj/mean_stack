@@ -5,7 +5,7 @@ var app = express();
 
 
 //this is to set the static directory, request check for files in static directory first, if not found then looks at other path specified in app.get
-app.use(express.static("public"));///bootstrap_templates/nice_to_meet_you
+app.use(express.static("public/bootstrap_templates/nice_to_meet_you/"));///bootstrap_templates/nice_to_meet_you
 
 //use "bower upgrade" to update bower components
 app.use(express.static("bower_components"));//now remove references to core bootstrap & jquery in index.html ( vendor/bootstrap/js/bootstrap.min.js should be removed and pointed to bower_components/bootstrap/XXXXXXX appropriate path, already done in index.html, search for core and see the changes) 

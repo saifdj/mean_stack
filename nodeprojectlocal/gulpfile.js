@@ -17,9 +17,9 @@ gulp.task("inject", function() {
 
     var inject = require("gulp-inject"); //used to inject our custom js & css files in public folder into html file, check inject:css & inject:js comments in html
 
-    var injectSrc = gulp.src(["./public/css/*.css", "./public/js/*.js"]) //from here custom css & js files are taken //"./public/bootstrap_templates/nice_to_meet_you/css/*.css", "./public/bootstrap_templates/nice_to_meet_you/js/*.js"
+    var injectSrc = gulp.src(["./public/bootstrap_templates/nice_to_meet_you/css/*.css", "./public/bootstrap_templates/nice_to_meet_you/js/*.js"]) //from here custom css & js files are taken //"./public/bootstrap_templates/nice_to_meet_you/css/*.css", "./public/bootstrap_templates/nice_to_meet_you/js/*.js"
     var injectOptions = {
-        ignorePath: "/public" //this public path variable is not shown in .html file at custom css linking
+        ignorePath: "/public/bootstrap_templates/nice_to_meet_you" //this public path variable is not shown in .html file at custom css linking
     }// 
 
 
