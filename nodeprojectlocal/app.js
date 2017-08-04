@@ -27,7 +27,11 @@ app.get("/", function(req, response) {
 
     console.log("got a request from client browser");
     // response.send("Sending this string as response to client/browsers request");
-    response.render("index", {"prarms_for_ejs": ["saif", "mobile app dev", "mean", "node"]});
+    response.render("index", {
+        "prarms_for_ejs": ["saif", "mobile app dev", "mean", "node"],
+        "nav_elements" : ["Services","Portfolio", "About", "Team", "Contact"]
+
+    });
 });
 
 

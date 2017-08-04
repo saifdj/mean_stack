@@ -12,7 +12,7 @@
     <title>Saif Agency - Bootstrap Theme</title>
 
     <!-- Bootstrap Core CSS    vendor/bootstrap/css/bootstrap.min.css -->
-      <!-- <link href="bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">         -->
+    <!-- <link href="bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">         -->
 
     <!-- //overriding main of bower_components/bower.json as it does not contain css we are adding it here, which results in dynamic linking of css files in index.html, check bower:css comment. Our main nodeprojectlocal/bower.json has depedency bootstrap.js which downloads bower_components/bootstrap, which in trun contain its own bower.json. This override is fix for linking css files -->
     <!-- bower:css -->
@@ -84,9 +84,16 @@
                     <li class="hidden">
                         <a href="#page-top"></a>
                     </li>
-                    <li>
-                        <a class="page-scroll" href="#services">Services</a>
-                    </li>
+                    <% for(var i=0; i<nav_elements.length; i++) { %>
+
+                        <li>
+                            <a class="page-scroll" href="#<%= nav_elements[i].toLowerCase() %>">
+                                <%=nav_elements[i]%>
+                            </a>
+                        </li>
+
+                        <% } %>
+                            <!--                     
                     <li>
                         <a class="page-scroll" href="#portfolio">Portfolio</a>
                     </li>
@@ -99,6 +106,7 @@
                     <li>
                         <a class="page-scroll" href="#contact">Contact</a>
                     </li>
+                 -->
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
@@ -636,10 +644,10 @@
                                 <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
                                 <img class="img-responsive img-centered" src="img/portfolio/golden-preview.png" alt="">
                                 <p>Start Bootstrap's Agency theme is based on Golden, a free PSD website template built by
-                                    <a
-                                        href="https://www.behance.net/MathavanJaya">Mathavan Jaya</a>. Golden is a modern and clean one page web template that was made exclusively
-                                        for Best PSD Freebies. This template has a great portfolio, timeline, and meet your
-                                        team sections that can be easily modified to fit your needs.</p>
+                                    <a href="https://www.behance.net/MathavanJaya">Mathavan Jaya</a>. Golden is a modern
+                                    and clean one page web template that was made exclusively for Best PSD Freebies. This
+                                    template has a great portfolio, timeline, and meet your team sections that can be easily
+                                    modified to fit your needs.</p>
                                 <p>You can download the PSD template in this portfolio sample item at <a href="http://freebiesxpress.com/gallery/golden-free-one-page-web-template/">FreebiesXpress.com</a>.</p>
                                 <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close Project</button>
                             </div>
