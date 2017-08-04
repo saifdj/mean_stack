@@ -4,7 +4,7 @@ var express = require('express');
 var app = express();
 
 //used to route, same as app.get
-var eventRouter = express.Router();
+var eventRouter = require("./src/routes/eventRoutes");
 
 //this is to set the static directory, request check for files in static directory first, if not found then looks at other path specified in app.get
 app.use(express.static("public/bootstrap_templates/nice_to_meet_you/"));///bootstrap_templates/nice_to_meet_you
@@ -21,19 +21,7 @@ app.set("view engine", "ejs"); //view engine for our app is ejs, it is light wei
 
 
 
-
-
-
-eventRouter.route("/").get(function (req, response) {
-    response.send("Events");
-}); //it can also be a .post
-
-
-eventRouter.route("/event").get(function (req, response) {
-    response.send("Single Event");
-}); //it can also be a .post, executes when hit has /events/event
-
-app.use("/Events", eventRouter) //uses eventRouter when url has /events
+app.use("/Events", eventRouter) //uses eventRouter when url has /events, case-insensitive here
 
 
 
@@ -46,12 +34,13 @@ app.get("/", function (req, response) {
     response.render("index", {
         "prarms_for_ejs": ["saif", "mobile app dev", "mean", "node"],
         "nav_elements": [{
-            "text": "Services", "link": "services"}, 
-            { "text": "Portfolio", "link": "portfolio" }, 
-            { "text": "About", "link": "about" }, 
-            { "text": "Team", "link": "team" }, 
-            { "text": "Contact", "link": "contact" },
-            { "text": "Events", "link": "" }
+            "text": "Services", "link": "services"
+        },
+        { "text": "Portfolio", "link": "portfolio" },
+        { "text": "About", "link": "about" },
+        { "text": "Team", "link": "team" },
+        { "text": "Contact", "link": "contact" },
+        { "text": "Events", "link": "events" }
         ]
 
     });
