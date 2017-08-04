@@ -17,16 +17,17 @@ gulp.task("inject", function() {
 
     var inject = require("gulp-inject"); //used to inject our custom js & css files in public folder into html file, check inject:css & inject:js comments in html
 
-    var injectSrc = gulp.src(["./public/bootstrap_templates/nice_to_meet_you/css/*.css", "./public/bootstrap_templates/nice_to_meet_you/js/*.js"]) //from here custom css & js files are taken
+    var injectSrc = gulp.src(["./public/css/*.css", "./public/js/*.js"]) //from here custom css & js files are taken //"./public/bootstrap_templates/nice_to_meet_you/css/*.css", "./public/bootstrap_templates/nice_to_meet_you/js/*.js"
     var injectOptions = {
-        
-    }// ignorePath: "/public" //this public path variable is not shown in .html file at custom css linking
+        ignorePath: "/public" //this public path variable is not shown in .html file at custom css linking
+    }// 
 
 
     var options = {
         bowerJson: require("./bower.json"), //tell wiredep to look depdencencies in bower.json, our dependency is "bootstrap v^3.3.7"
-        directory: "./bower_components" //path for dependencies, from here bootstrap core js and jquery files are taken by wiredep
-    } //ignorePath: "../../bower_components" //this is used to ignore the given prefix for dynamically injected files in html
+        directory: "./bower_components", //path for dependencies, from here bootstrap core js and jquery files are taken by wiredep
+        ignorePath: "../../bower_components" //this is used to ignore the given prefix for dynamically injected files in html
+    } //
     return gulp.src("./src/views/*.ejs") //path for files which on which injection has to happen(code is added dynamically to these files) 
           .pipe(wiredep(options))
           .pipe(inject(injectSrc, injectOptions))
