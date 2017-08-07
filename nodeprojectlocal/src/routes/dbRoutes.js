@@ -84,6 +84,7 @@ dbRouter.route("/AddDataToDB").get(function (req, response) { //route path AddDa
         collection.insertMany(eventsData, function(err, results) {
 
             response.send(results);
+            db.close()
         });//func is called after insertion, "results" set contains objects we inserted along with new keys, say for eg., "_id" is added by mongo db for each object
 
     });//function should contain instructions to insert data, func has db reference in 2nd param & error as first param
