@@ -6,6 +6,8 @@ var app = express();
 //used to route, same as app.get
 var eventRouter = require("./src/routes/eventRoutes");
 
+var dbRouter = require("./src/routes/dbRoutes");
+
 //this is to set the static directory, request check for files in static directory first, if not found then looks at other path specified in app.get
 app.use(express.static("public/bootstrap_templates/nice_to_meet_you/"));///bootstrap_templates/nice_to_meet_you
 
@@ -21,9 +23,9 @@ app.set("view engine", "ejs"); //view engine for our app is ejs, it is light wei
 
 
 
-app.use("/events", eventRouter) //uses eventRouter when url has /events, case-insensitive here
+app.use("/events", eventRouter); //uses eventRouter when url has /events, case-insensitive here
 
-
+app.use("/DB", dbRouter); //asking express to use dbRouter when url has /DB extension, not case specific
 
 app.get("/", function (req, response) {
 
