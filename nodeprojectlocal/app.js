@@ -21,7 +21,7 @@ app.set("view engine", "ejs"); //view engine for our app is ejs, it is light wei
 
 
 
-app.use("/Events", eventRouter) //uses eventRouter when url has /events, case-insensitive here
+app.use("/events", eventRouter) //uses eventRouter when url has /events, case-insensitive here
 
 
 

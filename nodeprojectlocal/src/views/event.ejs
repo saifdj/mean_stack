@@ -279,94 +279,39 @@
 
 
 
-                        <% for(var i=0; i<events_data.length; i++) { %>
 
-                            <!-- <%var timeLineClassString = "" %> -->
-                                <!-- <% if (i%2==0) { %> -->
-                                    <!-- <%timeLineClassString = "class='timeline-inverted'"%> -->
-                                        <!-- <% } %> -->
-                                        <!-- <%=timeLineClassString%> -->
-                                            <li> 
-                                                <div class="timeline-image">
-                                                    <img class="img-circle img-responsive" src="img/about/<%=i+1%>.jpg" alt="">
-                                                </div>
-                                                <div class="timeline-panel">
-                                                    <div class="timeline-heading">
-                                                        <h4>
-                                                            <%=events_data[i].date%> |
-                                                                <%=events_data[i].time%>
-                                                        </h4>
-                                                        <h4 class="subheading">
-                                                            <%=events_data[i].name%>
-                                                        </h4>
-                                                    </div>
-                                                    <div class="timeline-body">
-                                                        <p class="text-muted">
-                                                             <a href="/events/<%=i%>">
-                                                                <%=events_data[i].description%>
-                                                             </a> 
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                            </li>
+                        <li>
+                            <div class="timeline-image">
+                                <img class="img-circle img-responsive" src="img/about/1.jpg" alt="">
+                            </div>
+                            <div class="timeline-panel">
+                                <div class="timeline-heading">
+                                    <h4>
+                                        <%=events_data.date%> |
+                                            <%=events_data.time%>
+                                    </h4>
+                                    <h4 class="subheading">
+                                        <%=events_data.name%>
+                                    </h4>
+                                </div>
+                                <div class="timeline-body">
+                                    <p class="text-muted">
+                                        <!-- <a href="<%=i%>"> -->
+                                        <%=events_data.description%>
+                                            <!-- </a> -->
+                                    </p>
+                                </div>
+                            </div>
+                        </li>
 
-                                            <% } %>
-                                                <!--                             
-                                <li class="timeline-inverted">
-                                    <div class="timeline-image">
-                                        <img class="img-circle img-responsive" src="img/about/2.jpg" alt="">
-                                    </div>
-                                    <div class="timeline-panel">
-                                        <div class="timeline-heading">
-                                            <h4>March 2011</h4>
-                                            <h4 class="subheading">An Agency is Born</h4>
-                                        </div>
-                                        <div class="timeline-body">
-                                            <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum
-                                                eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit
-                                                vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="timeline-image">
-                                        <img class="img-circle img-responsive" src="img/about/3.jpg" alt="">
-                                    </div>
-                                    <div class="timeline-panel">
-                                        <div class="timeline-heading">
-                                            <h4>December 2012</h4>
-                                            <h4 class="subheading">Transition to Full Service</h4>
-                                        </div>
-                                        <div class="timeline-body">
-                                            <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum
-                                                eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit
-                                                vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="timeline-inverted">
-                                    <div class="timeline-image">
-                                        <img class="img-circle img-responsive" src="img/about/4.jpg" alt="">
-                                    </div>
-                                    <div class="timeline-panel">
-                                        <div class="timeline-heading">
-                                            <h4>July 2014</h4>
-                                            <h4 class="subheading">Phase Two Expansion</h4>
-                                        </div>
-                                        <div class="timeline-body">
-                                            <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum
-                                                eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit
-                                                vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
-                                        </div>
-                                    </div>
-                                </li> -->
-                                                <li class="timeline-inverted">
-                                                    <div class="timeline-image">
-                                                        <h4>Be Part
-                                                            <br>Of Our
-                                                            <br>Story!</h4>
-                                                    </div>
-                                                </li>
+
+                        <li class="timeline-inverted">
+                            <div class="timeline-image">
+                                <h4>Be Part
+                                    <br>Of Our
+                                    <br>Story!</h4>
+                            </div>
+                        </li>
                     </ul>
                 </div>
             </div>
