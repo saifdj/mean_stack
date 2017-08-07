@@ -3,60 +3,6 @@ var express = require('express');
 
 var eventRouter = express.Router();
 
-var eventsData = [
-    {
-        name: 'Event 1',
-        description: 'Event 1 Description',
-        date: '2017:07:04',
-        time: '17:22',
-        location: {
-            street: '787 St Rod',
-            city: 'Hyderabad',
-            state: 'Telangana',
-            zip: '505445'
-        },
-        capacity: 456
-    },
-    {
-        name: 'Event 2',
-        description: 'Event 2 Description',
-        date: '2017:07:04',
-        time: '17:22',
-        location: {
-            street: '787 St Rod',
-            city: 'Hyderabad',
-            state: 'Telangana',
-            zip: '505445'
-        },
-        capacity: 456
-    },
-    {
-        name: 'Event 3',
-        description: 'Event 3 Description',
-        date: '2017:07:04',
-        time: '17:22',
-        location: {
-            street: '787 St Rod',
-            city: 'Hyderabad',
-            state: 'Telangana',
-            zip: '505445'
-        },
-        capacity: 456
-    },
-    {
-        name: 'Event 4',
-        description: 'Event 4 Description',
-        date: '2017:07:04',
-        time: '17:22',
-        location: {
-            street: '787 St Rod',
-            city: 'Hyderabad',
-            state: 'Telangana',
-            zip: '505445'
-        },
-        capacity: 456
-    }
-];
 
 
 
