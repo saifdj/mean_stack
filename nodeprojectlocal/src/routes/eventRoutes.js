@@ -5,6 +5,8 @@ var eventRouter = express.Router();
 
 var mongodb = require("mongodb").MongoClient;
 
+var eventData = "" //global var to hold results from mongo
+
 
 eventRouter.route("/").get(function (req, response) {
     //response.send("Events");
@@ -18,7 +20,7 @@ eventRouter.route("/").get(function (req, response) {
         var collection = db.collection("events");
         collection.find({}).toArray(function (err, results) {
 
-
+            eventData = results //writing fetched results to global var
 
             response.render("events", {
                 "prarms_for_ejs": ["saif", "mobile app dev", "mean", "node"],
@@ -55,7 +57,7 @@ eventRouter.route("/:id").get(function (req, response) {
             { "text": "Contact", "link": "contact" },
             { "text": "Events", "link": "events" }
         ],
-        "events_data": eventsData[idValue] //passing the selected event
+        "events_data": eventData[idValue] //passing the selected event
 
     });
 
